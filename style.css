@@ -388,7 +388,7 @@ h2{
 
 @media (max-width: 768px) {
     .titulo-cabecalho {
-        font-size: 3.5rem; /* Reduz o tamanho do nome principal */
+        font-size: 3rem; /* Reduz o tamanho do nome principal */
     }
 
     .cabecalho-sub-titulo {
