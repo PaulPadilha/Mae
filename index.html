@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Studio Sueli Padilha</title>
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fleur+De+Leah&display=swap" rel="stylesheet">
+</head>
+<body>
+<div class="particulas"></div>
+
+<nav class="navegacao">
+    <ul class="menu">
+        <li><a href="#inicio" class="menu-link">Início</a></li>
+        <li><a href="#sobre" class="menu-link">Sebre</a></li>
+        <li><a href="#servicos" class="menu-link">Serviços</a></li>
+        <li><a href="#contatos" class="menu-link">Contato</a></li>
+    </ul>
+</nav>
+
+<main id="inicio" class="cabecalho">
+    <div class="foto-perfil-container">
+        <img src="Imag/Mãe.jpg" alt="Foto Studio Sueli Padilha" class="foto-perfil">
+    </div>
+    <h1 class="titulo-cabecalho fleur-de-leah-regular">Suelip. Studio</h1>
+
+    <p class="cabecalho-sub-titulo">Design de Sobrancelhas, Alongamento de Cílios e Cortes Femininos</p>
+</main>
+
+<section id="sobre" class="sobre">
+    <h2 class="sobre-titulo fleur-de-leah-regular">Sobre</h2>
+    <div class="sobre-caixa">
+        <p class="sobre-paragrafo">
+            No <strong>Studio Sueli Padilha</strong>, oferecemos atendimento personalizado com foco em realçar sua beleza e bem-estar.
+            Nossos serviços incluem,<b>Depilação</b>, <strong>Design de Sobrancelhas</strong>, <strong>Alongamento de Cílios</strong> e <strong>Cortes Femininos</strong>,
+            sempre prezando pela qualidade e satisfação das nossas clientes.
+        </p>
+    </div>
+</section>
+
+<section id="servicos" class="servicos">
+    <h2 class="servicos-titulo fleur-de-leah-regular">Serviços</h2>
+    <div class="servicos-caixa">
+
+        <div class="servicos-card">
+            <img src="Imag/Design sem nome.png" alt="Servicos 1" class="servicos-imagem">
+            <div class="caixa-textos-servicos">
+                <h3 class="info-servicos">Depilação</h3>
+                <p class="paragrafo-servicos">Diga adeus à dor e irritação! Nossa depilação com cera <b>marroquina</b> é uma experiência de carinho para sua pele. Feita com o delicioso extrato de <b>manga rosa</b>, ela é <b>100% natural, cicatrizante e hidrata a pele</b>, deixando-a macia e lisinha. E o melhor de tudo: <b>reduz a dor em até 80%!</b> Uma depilação suave e eficaz, para você se sentir ainda mais linda e confortável.</>
+            </div>
+        </div>
+
+        <div class="servicos-card">
+            <img src="Imag/Cilios.jpg" alt="Servicos 2" class="servicos-imagem">
+            <div class="caixa-textos-servicos">
+                <h3 class="info-servicos">Extensão de Cílios</h3>
+                <p class="paragrafo-servicos">Quer um olhar poderoso e marcante? O alongamento de cílios é a solução perfeita! Com a gente, <b>você acorda pronta todos os dias</b>, sem se preocupar com rímel. Nossos cílios são aplicados com a técnica perfeita, <b>garantindo um resultado natural</b>, volumoso e duradouro. É o toque mágico que faltava para um <b>olhar inesquecível!</b></p>
+            </div>
+        </div>
+
+        <div class="servicos-card">
+            <img src="Imag/CorteSomb.jpg" alt="Servicos 3" class="servicos-imagem">
+            <div class="caixa-textos-servicos">
+                <h3 class="info-servicos">Cortes Femininos e Design de Sobrancelhas</h3>
+                <p class="paragrafo-servicos">Seu rosto é a sua moldura, e <b>seu cabelo, a sua coroa</b>! No nosso estúdio, cada detalhe é pensado para <b>realçar o que você tem de mais bonito</b>. Nossos serviços de <b>design de sobrancelhas</b> e <b>cortes femininos</b> são feitos sob medida para a sua <b>personalidade e estilo</b>, te deixando com um visual <b>impecável e cheio de confiança.</b></p>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+
+
+<section id="contatos" class="contatos">
+    <h2 class="contatos-titulo fleur-de-leah-regular">Agende seu horário</h2>
+    <form class="formulario-contato" id="formulario" onsubmit="enviarWhats(event)">
+        <div class="grupo-form">
+            <input type="text" placeholder="Seu Nome" class="campo-form" id="nome">
+        </div>
+        <div class="grupo-form">
+            <textarea class="campo-form" placeholder="Sua Mensagem" id="mensagem" rows="5"></textarea>
+        </div>
+
+        <button type="submit" class="botao-enviar">
+            Enviar via WhatsApp
+        </button>
+
+    </form>
+    <p style="text-align:center; margin-top: 1rem; color: var(--claro);">
+        📍 Av. Arymana, 1334 - Pq. Dom Pedro II<br>
+
+    </p>
+</section>
+
+<script>
+    function enviarWhats(event) {
+        event.preventDefault();
+
+        const nomeInput = document.getElementById('nome');
+        const mensagemInput = document.getElementById('mensagem');
+
+        if (nomeInput.value.trim() === '' || mensagemInput.value.trim() === '') {
+            alert('Por favor, preencha todos os campos.');
+            return;
+        }
+
+        const nome = nomeInput.value;
+        const mensagem = mensagemInput.value;
+        const telefone = '5519991763531';
+
+        const texto = `Olá! Me chamo ${nome}, e gostaria de conversar sobre: ${mensagem}.`;
+        const msgFormatada = encodeURIComponent(texto);
+
+        const url = `https://wa.me/${telefone}?text=${msgFormatada}`;
+
+        window.open(url, '_blank');
+    }
+</script>
+
+</body>
+</html>
