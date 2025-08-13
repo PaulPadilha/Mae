@@ -382,13 +382,14 @@ h2{
     }
 
     .menu {
-        gap: 1.5rem;
+        justify-content: space-around; /* Distribui os itens uniformemente */
+        gap: 0.5rem; /* Reduz o espaço entre os links */
     }
 }
 
 @media (max-width: 768px) {
     .titulo-cabecalho {
-        font-size: 3.5rem; /* Reduz o tamanho do nome principal */
+        font-size: 2rem; /* Reduz o tamanho do nome principal */
     }
 
     .cabecalho-sub-titulo {
@@ -405,5 +406,6 @@ h2{
     .menu {
         justify-content: space-around; /* Distribui os itens uniformemente */
         gap: 0.5rem; /* Reduz o espaço entre os links */
+        position: center;
     }
 }
